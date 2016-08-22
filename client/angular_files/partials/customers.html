@@ -1,0 +1,19 @@
+<div ng-controller = "ministoreController as MC">
+
+	<table>
+		<tr>
+			<th>Customer</th>
+		</tr>
+		<tr ng-repeat="customer in MC.customers">
+		    <td>{{customer.name}}</td>
+		    <td>{{customer._id}}</td>
+		    <td>{{customer._products}}</td>
+		    <td><button ng-click="MC.deleteCustomer(customer._id)">delete customer</button></td>
+	    </tr>
+    </table>
+
+	<form>
+		<p>Customer Name <input type = 'text' ng-model = 'MC.custinfo.name'> </p>
+		<button ng-click='MC.newCustomer()'>Add Customer</button>
+	</form>
+</div>

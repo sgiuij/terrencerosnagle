@@ -1,0 +1,28 @@
+<div ng-controller = "ministoreController as MC">
+	<table>
+		<tr>
+			<th>Product Name</th>
+			<th>Price</th>
+			<th>Quantity Available</th>
+			<th>Delete</th>
+		</tr>
+		<tr ng-repeat="product in MC.products">
+			
+		    <td>{{product.name}}</td>
+		    <td>{{product.price}}</td>
+		    <td>{{product.quantity}}</td>
+		    <td>{{product._id}}</td>
+		    <td>{{product._orders}}</td>
+		    <td><button ng-click="MC.deleteProduct(product._id)">delete</button></td>
+	    </tr>
+	</table>
+<!-- 	<p ng-repeat="product in MC.products">
+		{{product.name}}
+	</p> -->
+	<form>
+		<p>Product name <input type = 'text' ng-model = 'MC.prodinfo.name'> </p>
+		<p>Product price <input type = 'text' ng-model = 'MC.prodinfo.price'> </p>
+		<p>Product quantity <input type = 'text' ng-model = 'MC.prodinfo.quantity'> </p>
+		<button ng-click='MC.newProduct()'>Add Product</button>
+	</form>
+</div>
