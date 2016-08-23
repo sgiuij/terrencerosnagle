@@ -20,6 +20,7 @@ var AdminSchema = new mongoose.Schema({
 
 var EventSchema = new mongoose.Schema({
   date:{type:Date, required:true},
+  time:{type:String, required:true},
   location:{type:String, required:true},
   content:{type:String, required:true}
 }, {timestamps: true})
@@ -32,6 +33,11 @@ var BioSchema = new mongoose.Schema({
 var UserSchema = new mongoose.Schema({
   email:{type:String, required:true},
   password:{type:String,required:true}
+})
+
+var ContentSchema = new mongoose.Schema({
+  content:{type:String, required:true},
+  picturelink:[{type:String}]
 })
 
 AdminSchema.pre('save', function (next) {
@@ -49,3 +55,4 @@ mongoose.model('Admin', AdminSchema)
 mongoose.model('Event',EventSchema)
 mongoose.model('User',UserSchema)
 mongoose.model('Bio',BioSchema)
+mongoose.model('Content',ContentSchema)

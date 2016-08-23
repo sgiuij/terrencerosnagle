@@ -3,34 +3,28 @@
 
   angular
     .module('myApp')
-    .factory('eventsController', factory)
+    .factory('eventFactory', factory)
 
   function factory ($http) {
     var factory = {}
 
-    factory.getSession = function (callback) {
-      $http.get('/session')
-        .then(function (returnData) {
-          callback(returnData)
-        })
-    }
-
     factory.newEvent = function (eventinfo, callback) {
-      $http.post('/event/new', productInfo)
+      $http.post('/event/new', eventinfo)
         .then(function (returnData) {
           callback(returnData)
         })
     }
 
     factory.allEvents = function (callback) {
+      console.log('in allEvents factory')
       $http.get('/events')
         .then(function (returnData) {
             callback(returnData)
         })
     }
 
-    factory.deleteEvent = function (eventId, callback) {
-      $http.post('/event/'+eventId)
+    factory.deleteEvent = function (id, callback) {
+      $http.post('/event/delete/'+id)
         .then(function (returnData) {
             callback(returnData)
         })

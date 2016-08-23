@@ -36,18 +36,14 @@ module.exports = {
   },
 
   allEvents: function(req,res){
+    console.log('in allEvents backend controller')
     Event.find({}, function(err, events){
       if (err){
-        res.json({status:false,errors: err })
+        res.json({errors: err })
       }else{
         res.json({events})
       }
     })  
-  },
+  }
   
-  session: function(req, res){
-    if (req.session['eventInfo']) return res.json({userInfo: req.session['eventInfo'] })
-    res.json({ status: false})
-  }  
-
 }

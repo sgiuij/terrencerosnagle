@@ -8,8 +8,6 @@
   function factory ($http) {
     var factory = {}
 
-    
-
     factory.register = function (userInfo, callback) {
       console.log('333333333333333333333')
       $http.post('/register', userInfo)

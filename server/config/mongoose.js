@@ -5,15 +5,9 @@ var mongoose = require ('mongoose'),
     models_path=path.join(__dirname,'/../models'),
     reg = new RegExp( ".js$", "i" ),
     bcrypt = require('bcryptjs'),
-    dbURI = 'mongodb://localhost/ministore';
+    dbURI = 'mongodb://localhost/terrence';
 
 mongoose.connect(dbURI);
-
-// fs.readdirSync(models_path).forEach(function(file){
-// 	if(file.indexOf('.js')>0){
-// 		require(models_path+'/'+file); 
-// 	}
-// });
 
 mongoose.connection.on( 'connected', function () {
   console.log( `Mongoose default connection open to ${ dbURI }` );
