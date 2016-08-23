@@ -13,7 +13,7 @@ require('./server/config/mongoose.js');
 app.use(bp.urlencoded({extended:true}));
 app.use(bp.json());
 app.use(express.static(path.join(root+'/client')));
-app.use(express.static(path.join( root,'/bower_components')));
+app.use(express.static(path.join(root,'/bower_components')));
 app.use(session({
 	secret: 'grumpy cat',
 	resave: false,

@@ -2,17 +2,25 @@
 <html ng-app='myApp'>
 <head>
 	<meta charset="utf-8">
-	<title>mini Store</title>
+	<title>Terrence Rosnagle</title>
 	<script type="text/javascript" src='/bower_components/angular/angular.js'></script>
 	<script type="text/javascript" src='/bower_components/angular-route/angular-route.js'></script>
 	<script type="text/javascript" src='/angular_files/app.js'></script>
-	<script type="text/javascript" src='/angular_files/services/ministore.js'></script>
-	<script type="text/javascript" src='/angular_files/controllers/ministore.js'></script>
+	<script type="text/javascript" src='/angular_files/services/adminFactory.js'></script>
+	<script type="text/javascript" src='/angular_files/services/eventsFactory.js'></script>
+	<script type="text/javascript" src='/angular_files/services/userFactory.js'></script>
+	<script type="text/javascript" src='/angular_files/controllers/adminController.js'></script>
+	<script type="text/javascript" src='/angular_files/controllers/eventsController.js'></script>
+	<script type="text/javascript" src='/angular_files/controllers/userController.js'></script>
 </head>
 <body>
-	<a href="/#/products">Products</a>
-	<a href="/#/orders">Orders</a>
-	<a href="/#/customers">Customers</a>
+<a href="/#/biography">biography</a>
+<a href="/#/events">events</a>
+<a href="/#/contact">contact</a>
+<a href="/#/home">home</a>
+<a href="/#/lessons">lessons</a>
+<a href="/#/booking">booking</a>
+<a href="/#/payment">payment</a>
  <div ng-view=''></div>
 </body>
 </html>

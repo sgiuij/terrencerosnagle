@@ -1,0 +1,23 @@
+<div ng-controller = "ministoreController as MC">
+
+	<table>
+	<tr ng-repeat="order in MC.orders">
+	    <td>{{order._customer.name}}</td>
+	    <td>{{order._products.name}}</td>
+	    <td>{{order.prodquantity}}</td>
+    </tr>
+	</table>
+
+
+	<form>
+		Customer
+		<select ng-options="customer.name for customer in MC.customers" ng-model = "MC.orderinfo.customer"></select>
+
+		Product<select ng-options="product.name for product in MC.products" ng-model = 'MC.orderinfo.prodname'>{{product.name}}</select>
+
+		Quantity <input type="text" ng-model = "MC.orderinfo.prodquantity">
+
+		<button ng-click='MC.newOrder()'>Make Order</button>
+	</form>
+
+</div>

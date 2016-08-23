@@ -11,19 +11,28 @@ var mongoose = require('mongoose'),
 // UserSchema.methods.validPassword = function (enterdPassword) {
 //   return bcrypt.compareSync(enterdPassword, this.password)
 // }
-
+  
 var AdminSchema = new mongoose.Schema({
-  name:{type:String, required:true}
+  name:{type:String, required:true},
   email:{type:String, required:true},
   password:{type:String,required:true}
 }, {timestamps: true})
 
-var ScheduleSchema = new mongoose.Schema({
+var EventSchema = new mongoose.Schema({
   date:{type:Date, required:true},
   location:{type:String, required:true},
   content:{type:String, required:true}
 }, {timestamps: true})
 
+var BioSchema = new mongoose.Schema({
+  content:{type:String, required:true},
+  picturelink:[{type:String}]
+})
+
+var UserSchema = new mongoose.Schema({
+  email:{type:String, required:true},
+  password:{type:String,required:true}
+})
 
 AdminSchema.pre('save', function (next) {
   bcrypt.genSalt(10, function (err, salt) {
@@ -37,4 +46,6 @@ AdminSchema.pre('save', function (next) {
 })
 
 mongoose.model('Admin', AdminSchema)
-mongoose.model('Schedule',ScheduleSchema)
+mongoose.model('Event',EventSchema)
+mongoose.model('User',UserSchema)
+mongoose.model('Bio',BioSchema)

@@ -7,16 +7,22 @@
 	function config($routeProvider){
 		$routeProvider
 		.when('/',{
-			templateUrl:'angular_files/partials/index.html'
+			templateUrl:'angular_files/partials/home.html'
 		})
-		.when('/products',{
-			templateUrl:'angular_files/partials/products.html'
+		.when('/events',{
+			templateUrl:'angular_files/partials/events.html'
 		})
-		.when('/customers',{
-			templateUrl:'angular_files/partials/customers.html'
+		.when('/lessons',{
+			templateUrl:'angular_files/partials/lessons.html'
 		})
-		.when('/orders',{
-			templateUrl:'/angular_files/partials/orders.html'
+		.when('/biography',{
+			templateUrl:'/angular_files/partials/biography.html'
+		})
+		.when('/booking',{
+			templateUrl:'/angular_files/partials/booking.html'
+		})
+		.when('/contact',{
+			templateUrl:'/angular_files/partials/contact.html'
 		})
 		.otherwise({
 			redirectTo:'/'
