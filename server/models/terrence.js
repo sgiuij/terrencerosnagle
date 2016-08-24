@@ -1,22 +1,15 @@
 var mongoose = require('mongoose'),
     bcrypt = require('bcryptjs')
-
-// var UserSchema = new mongoose.Schema({
-//   first_name: {type: String, required: true, minlength: 2, maxlength: 256},
-//   last_name: {type: String, required: true, minlength: 2, maxlength: 256},
-//   email: {type: String, required: true, minlength: 6, maxlength: 256, unique: true},
-//   password: {type: String, required: true, minlength: 8, maxlength: 256}
-// }, {timestamps: true})
-
-// UserSchema.methods.validPassword = function (enterdPassword) {
-//   return bcrypt.compareSync(enterdPassword, this.password)
-// }
   
 var AdminSchema = new mongoose.Schema({
   name:{type:String, required:true},
   email:{type:String, required:true},
   password:{type:String,required:true}
 }, {timestamps: true})
+
+AdminSchema.methods.validPassword = function (enterdPassword) {
+  return bcrypt.compareSync(enterdPassword, this.password)
+}
 
 var EventSchema = new mongoose.Schema({
   date:{type:Date, required:true},
@@ -25,20 +18,25 @@ var EventSchema = new mongoose.Schema({
   content:{type:String, required:true}
 }, {timestamps: true})
 
-var BioSchema = new mongoose.Schema({
-  content:{type:String, required:true},
-  picturelink:[{type:String}]
-})
-
 var UserSchema = new mongoose.Schema({
+  name:{type:String,required:true},
   email:{type:String, required:true},
+  status:{type:Boolean, required:true, default:true},
   password:{type:String,required:true}
 })
 
-var ContentSchema = new mongoose.Schema({
-  content:{type:String, required:true},
-  picturelink:[{type:String}]
+var ServiceSchema = new mongoose.Schema({
+  page:{type:String, required:true},
+  content:[{type:String, required:true}],
+  picturelink:[{type:String}],
+  videolink:[{type:String}]
 })
+
+var SampleSchema = new mongoose.Schema({
+  description:{type:String},
+  audiolink:{type:String,required:true}
+})
+
 
 AdminSchema.pre('save', function (next) {
   bcrypt.genSalt(10, function (err, salt) {
@@ -54,5 +52,7 @@ AdminSchema.pre('save', function (next) {
 mongoose.model('Admin', AdminSchema)
 mongoose.model('Event',EventSchema)
 mongoose.model('User',UserSchema)
-mongoose.model('Bio',BioSchema)
-mongoose.model('Content',ContentSchema)
+mongoose.model('Service',ServiceSchema)
+mongoose.model('Sample',SampleSchema)
+
+

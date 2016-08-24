@@ -3,7 +3,7 @@
 
   angular
     .module('myApp')
-    .factory('contentFactory', factory)
+    .factory('serviceFactory', factory)
 
   function factory ($http) {
     var factory = {}

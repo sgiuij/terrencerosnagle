@@ -1,3 +1,18 @@
 <div ng-controller = 'eventController as EC'>
-
+	<table>
+		all users
+		<tr ng-repeat="user in EC.users">
+		    <td>{{user.name}}</td>
+		    <td>{{user.email}}</td>
+		    <td>{{user.code}}</td>
+		    <td><button ng-click="EC.deleteUser(user._id)">delete</button></td>
+	    </tr>
+	</table>
+<form>
+	add a user
+	name <input type="text" ng-model="EC.uerinfo.name">
+	email <input type="text" ng-model="EC.uerinfo.email">
+	code <input type="text" ng-model="EC.uerinfo.code">
+	<button ng-click="newUser()">add</button>
+</form>
 </div>

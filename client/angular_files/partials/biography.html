@@ -1,19 +1,24 @@
-<div ng-controller = "ministoreController as MC">
+<div ng-controller = "contentController as CC">
+	<h1>Specialties and Services</h1>
+	<ul>
+		<a href="/#/lessons"><li>Guitar Lessons</li> </a>
+		<a href="/#/booking"><li>Performance Invitations</li> </a>
+		<a href=""><li>Transcription Service</li> </a>
+	</ul>
+	<p>Born in Pasadena, California and raised in the Los Angeles area.</p>
+<p>Terrence was initially self taught and inspired by Delta Blues and Rock and Roll guitarist such as Robert Johnson, Son House, and Jimi Hendrix.  Later, his interests switched to the sound of the Spanish guitar and World Music.  He went on to study Flamenco guitar with private teachers in Spain such as Jose Ignacio Franco and El Carbonero in Jerez de la Frontera and through the Conservatory de Licieu in Barcelona, Spain.  He has studied Classical and South American guitar with the Chilean maestro Eulogio Davalos in Barcelona and Brazilian guitar styles with Steve Erquiaga at the Jazz School in Berkeley, California.  Terrence has lived in Buenos Aires, Argentina studying Folkloric guitar styles and in Istanbul, Turkey where he studied ud and Turkish Classical Music.</p>
 
-	<table>
-		<tr>
-			<th>Customer</th>
-		</tr>
-		<tr ng-repeat="customer in MC.customers">
-		    <td>{{customer.name}}</td>
-		    <td>{{customer._id}}</td>
-		    <td>{{customer._products}}</td>
-		    <td><button ng-click="MC.deleteCustomer(customer._id)">delete customer</button></td>
-	    </tr>
-    </table>
+<p>Terrence holds a BA in Anthropology from the Humboldt State University and a California Teaching Credential from Califronia State University East Bay.</p>
 
-	<form>
-		<p>Customer Name <input type = 'text' ng-model = 'MC.custinfo.name'> </p>
-		<button ng-click='MC.newCustomer()'>Add Customer</button>
-	</form>
+	<button ng-click="deleteContent()">delete bio</button>
+	
+	<div ng-repreat="image in images" ng-if="image.page=='bio'">
+		<img src="{{images.picturelink}}">
+	</div>
+	
+
+
+
+
+
 </div>

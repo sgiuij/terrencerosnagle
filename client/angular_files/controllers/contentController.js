@@ -3,64 +3,147 @@
 
   angular
     .module('myApp')
-    .controller('userController', userController)
+    .controller('contentController', contentController)
 
     
-  function userController (userFactory, $scope, $location) {
+  function contentController (contentFactory, $scope, $location) {
     var _this = this
     _this.errors = []
 
-    _this.allUsers = function () {
+    _this.getBio = function () {
       _this.errors = []
-      userFactory.allUsers(function (factoryData) {
+      contentFactory.getBio(function (factoryData) {
         if (factoryData.data.errors) {
            _this.errors = factoryData.data.errors
         } else {
-          _this.users = factoryData.data.users
+          _this.bio = factoryData.data.bio
         }
       })
     }
-    _this.allUsers()
+    _this.getBio()
 
-    _this.deleteUser = function(id){
+    _this.getLesson = function () {
       _this.errors = []
-      userFactory.deleteUser(id, function (factoryData) {
-        if (factoryData.data.status) {
-          _this.allUsers()
+      contentFactory.getLesson(function (factoryData) {
+        if (factoryData.data.errors) {
+           _this.errors = factoryData.data.errors
         } else {
-          _this.errors = factoryData.data.errors
+          _this.lesson = factoryData.data.lesson
         }
       })
     }
+    _this.getLesson()
 
-    _this.deactivateUser = function(id){
+    _this.getBooking = function () {
       _this.errors = []
-      userFactory.deactivateUser(id, function (factoryData) {
-        if (factoryData.data.status) {
-          _this.allUsers()
+      contentFactory.getBooking(function (factoryData) {
+        if (factoryData.data.errors) {
+           _this.errors = factoryData.data.errors
         } else {
-          _this.errors = factoryData.data.errors
+          _this.booking = factoryData.data.booking
         }
       })
     }
+    _this.getBooking()
 
-    _this.activateUser = function(id){
+    _this.newBio = function () {
       _this.errors = []
-      userFactory.activateUser(id, function (factoryData) {
-        if (factoryData.data.status) {
-          _this.allUsers()
-        } else {
-          _this.errors = factoryData.data.errors
-        }
-      })
-    }
-    _this.newUser = function () {
-      _this.errors = []
-      userFactory.newUser(_this.prodinfo, function (factoryData) {
+      eventFactory.newBio(_this.eventinfo, function (factoryData) {
         if (factoryData.data.errors) {
           _this.errors = factoryData.data.errors
         } else {
-          _this.allUsers()
+          _this.getBio()
+        }
+      })
+    }
+
+    _this.newLesson = function () {
+      _this.errors = []
+      eventFactory.newLesson(_this.eventinfo, function (factoryData) {
+        if (factoryData.data.errors) {
+          _this.errors = factoryData.data.errors
+        } else {
+          _this.getLesson()
+        }
+      })
+    }
+
+    _this.newBooking = function () {
+      _this.errors = []
+      eventFactory.newBooking(_this.eventinfo, function (factoryData) {
+        if (factoryData.data.errors) {
+          _this.errors = factoryData.data.errors
+        } else {
+          _this.getBooking()
+        }
+      })
+    }
+
+    _this.getBio = function () {
+      _this.errors = []
+      contentFactory.getBio(function (factoryData) {
+        if (factoryData.data.errors) {
+           _this.errors = factoryData.data.errors
+        } else {
+          _this.bio = factoryData.data.bio
+        }
+      })
+    }
+    _this.getBio()
+
+    _this.getBio = function () {
+      _this.errors = []
+      contentFactory.getBio(function (factoryData) {
+        if (factoryData.data.errors) {
+           _this.errors = factoryData.data.errors
+        } else {
+          _this.bio = factoryData.data.bio
+        }
+      })
+    }
+    _this.getBio()
+
+    _this.getBio = function () {
+      _this.errors = []
+      contentFactory.getBio(function (factoryData) {
+        if (factoryData.data.errors) {
+           _this.errors = factoryData.data.errors
+        } else {
+          _this.bio = factoryData.data.bio
+        }
+      })
+    }
+    _this.getBio()
+
+    _this.deleteEvent = function(id){
+      _this.errors = []
+      eventFactory.deleteEvent(id, function (factoryData) {
+        if (factoryData.data.errors) {
+          _this.errors = factoryData.data.errors 
+        } else {
+          _this.allEvents()
+        }
+      })
+    }
+
+    _this.deleteEvent = function(id){
+      _this.errors = []
+      eventFactory.deleteEvent(id, function (factoryData) {
+        if (factoryData.data.errors) {
+          _this.errors = factoryData.data.errors 
+        } else {
+          _this.allEvents()
+        }
+      })
+    }
+
+    _this.deleteEvent = function(id){
+      _this.errors = []
+      eventFactory.deleteEvent(id, function (factoryData) {
+        if (factoryData.data.errors) {
+          _this.errors = factoryData.data.errors 
+        } else {
+          _this.allEvents()
         }
       })
     }

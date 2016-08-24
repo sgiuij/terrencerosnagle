@@ -4,7 +4,8 @@
   angular
     .module('myApp')
     .controller('eventController', eventController)
-    //Q1:
+    //Q1:modularized controller, why is allEvent still running everywhere
+    //why do we use _this instead of this
   function eventController (eventFactory, $scope, $location) {
     var _this = this
     _this.errors = []
