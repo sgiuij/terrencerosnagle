@@ -1,0 +1,17 @@
+<div ng-controller = "serviceController as SC">
+<p>I offer professional transcription service for guitar.</p>
+
+<p>How does it work?  Ever hear a song you want to learn but don't have the patience or time to figure it out?  I'll do it for you.  I can do parts of songs (solos, intros, bridges, etc) or complete songs.   Perhaps you have the sheet music for a song or piece, but don't read standard notation - I can put it into guitar tab to your specifications.</p>
+
+<p>Prices-
+$30.00 per hour.  Most songs take about an hour.  Parts of songs require less time so prices are adjusted accordingly.</p>
+
+ <p>Simply contact me at mail@terrencerosnagle.com   Let me know the music you would like transcribed.  I will quote you a price and turn-around time.  Once the transcription is made I will tell you. Then, you pay and  I give you the transcription.</p>
+
+<form> 
+	<input type="text" ng-model="SC.serviceinfo.content">
+	
+	<button ng-click="SC.service.deleteService()">add</button>
+</form>
+
+</div>

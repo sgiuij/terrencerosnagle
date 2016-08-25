@@ -5,15 +5,63 @@
 		<a href="/#/booking"><li>Performance Invitations</li> </a>
 		<a href=""><li>Transcription Service</li> </a>
 	</ul>
-
+<div>
 	<h1>About Terrence</h1>
 	<p>Born in Pasadena, California and raised in the Los Angeles area.</p>
 <p>Terrence was initially self taught and inspired by Delta Blues and Rock and Roll guitarist such as Robert Johnson, Son House, and Jimi Hendrix.  Later, his interests switched to the sound of the Spanish guitar and World Music.  He went on to study Flamenco guitar with private teachers in Spain such as Jose Ignacio Franco and El Carbonero in Jerez de la Frontera and through the Conservatory de Licieu in Barcelona, Spain.  He has studied Classical and South American guitar with the Chilean maestro Eulogio Davalos in Barcelona and Brazilian guitar styles with Steve Erquiaga at the Jazz School in Berkeley, California.  Terrence has lived in Buenos Aires, Argentina studying Folkloric guitar styles and in Istanbul, Turkey where he studied ud and Turkish Classical Music.</p>
 
 <p>Terrence holds a BA in Anthropology from the Humboldt State University and a California Teaching Credential from Califronia State University East Bay.</p>
+</div>
 
+<div ng-app="plunker">
+        <div  ng-controller="MainCtrl">
+            <p><date-input name="info.name" message="info.message"></date-input></p>
+            <ul>
+                <li data-ng-repeat="business in businesses">
+                    {{business.name}}
+                </li>
+            </ul>
+        </div>
+        <script>
+            function randomString(length, chars) {
+                var result = '';
+                for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+                return result;
+            }
 
+            var app = angular.module('plunker', []);
+            app.controller('MainCtrl', ['$scope', 'MyYelpAPI', function($scope, MyYelpAPI) {
+                $scope.businesses = [];
+                MyYelpAPI.retrieveYelp('', function(data) {
+                    $scope.businesses = data.businesses;
 
+                });
+
+            }]).factory("MyYelpAPI", function($http) {
+                return {
+                    "retrieveYelp": function(name, callback) {
+                        var method = 'GET';
+                        var url = 'http://api.yelp.com/v2/search';
+                        var params = {
+                            callback: 'angular.callbacks._0',
+                            location: 'San+Francisc',
+                            oauth_consumer_key: '', //Consumer Key
+                            oauth_token: '', //Token
+                            oauth_signature_method: "HMAC-SHA1",
+                            oauth_timestamp: new Date().getTime(),
+                            oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                            term: 'food'
+                        };
+                        var consumerSecret = ''; //Consumer Secret
+                        var tokenSecret = ''; //Token Secret
+                        var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
+                        params['oauth_signature'] = signature;
+                        $http.jsonp(url, {params: params}).success(callback);
+                    }
+                }
+            });
+        </script>
+    </div>
 
 
 

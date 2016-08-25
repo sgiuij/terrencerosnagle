@@ -1,28 +1,7 @@
-<div ng-controller = "userController as UC">
-
-	<table>
-		<tr>
-			<th>name</th>
-			<th>email</th>
-			<th>code</th>
-		</tr>
-	<tr ng-repeat="user in UC.users">
-	    <td>{{user.name}}</td>
-	    <td>{{user.email}}</td>
-	    <td>{{user.code}}</td>
-    </tr>
-	</table>
+<div ng-controller = "paypalController as PC">
 
 
-	<form>
-		Customer
-		<select ng-options="customer.name for customer in MC.customers" ng-model = "MC.orderinfo.customer"></select>
 
-		Product<select ng-options="product.name for product in MC.products" ng-model = 'MC.orderinfo.prodname'>{{product.name}}</select>
 
-		Quantity <input type="text" ng-model = "MC.orderinfo.prodquantity">
-
-		<button ng-click='MC.newOrder()'>Make Order</button>
-	</form>
 
 </div>

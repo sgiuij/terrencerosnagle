@@ -8,36 +8,36 @@
   function factory ($http) {
     var factory = {}
 
-   factory.newUser = function (productInfo, callback) {
-      $http.post('/products/new', productInfo)
+   factory.newUser = function (userinfo, callback) {
+      $http.post('/users/new', userinfo)
         .then(function (returnData) {
           callback(returnData)
         })
     }
 
     factory.allUser = function (callback) {
-      $http.get('/products')
+      $http.get('/users')
         .then(function (returnData) {
             callback(returnData)
         })
     }
 
-    factory.deactivateUser = function (productId, callback) {
-      $http.post('/products/'+productId)
+    factory.deactivateUser = function (userinfo, callback) {
+      $http.post('/users/'+userinfo)
         .then(function (returnData) {
             callback(returnData)
         })
     }
 
-    factory.activateUser = function (productId, callback) {
-      $http.post('/products/'+productId)
+    factory.activateUser = function (userinfo, callback) {
+      $http.post('/users/'+userinfo)
         .then(function (returnData) {
             callback(returnData)
         })
     }
 
-    factory.deleteUser = function (productId, callback) {
-      $http.post('/products/'+productId)
+    factory.deleteUser = function (userinfo, callback) {
+      $http.post('/users/'+userinfo)
         .then(function (returnData) {
             callback(returnData)
         })

@@ -24,6 +24,15 @@
 		.when('/contact',{
 			templateUrl:'/angular_files/partials/contact.html'
 		})
+		.when('/payment',{
+			templateUrl:'/angular_files/partials/payment.html'
+		})
+		.when('/sample',{
+			templateUrl:'/angular_files/partials/sample.html'
+		})
+		.when('/admin',{
+			templateUrl:'/angular_files/partials/admin.html'
+		})
 		.otherwise({
 			redirectTo:'/'
 		})
