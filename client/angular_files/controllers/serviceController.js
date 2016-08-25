@@ -35,9 +35,12 @@
       })
     }
 
-    _this.deleteService = function(id){
+    _this.deleteService = function(link,id){
       _this.errors = []
-      serviceFactory.deleteService(id, function (factoryData) {
+      var sinfo={link:link,id:id}
+      serviceFactory.deleteService(sinfo, function (factoryData) {
+        console.log('deleteservice controller call back function')
+        console.log(sinfo)
         if (factoryData.data.errors) {
           _this.errors = factoryData.data.errors 
         } else {

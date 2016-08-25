@@ -15,9 +15,13 @@
         })
     }
 
-    factory.deleteService = function (id, callback) {
-      $http.post('/service/'+id)
+    factory.deleteService = function (sinfo, callback) {
+      console.log('*****deleteService factory*****')
+      console.log(sinfo)
+  
+      $http.post('/service/'+sinfo.id,sinfo.link)
         .then(function (returnData) {
+          console.log('*****deleteService factory*****')
             callback(returnData)
         })
     }

@@ -60,9 +60,19 @@ module.exports = {
   },
   
   deleteService: function(req,res){
-    Service.remove({_id:req.params.id},function(err,ser){
+    console.log('deleteService backend controller')
+    console.log(req.body)
+
+    Service.remove({_id:req.params.id,picturelink:{$in:[req.body.link]}},function(err,ser){
       if (err){
-        res.json({errors:err})
+        Service.remove({_id:req.params.id,videolink:{$in:[req.body.link]}},function(err,ser2){
+          if(err){
+            res.json({erros:err})
+          }else{
+            res.json({ser2})
+          }
+        })
+
       }else{
         res.json({ser})
       }
