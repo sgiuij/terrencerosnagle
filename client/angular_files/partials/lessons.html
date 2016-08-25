@@ -1,17 +1,17 @@
-<div ng-controller = "contentController as CC">
+<div ng-controller = "serviceController as SC">
 	<p>{{CC.lessons}}</p>
-	<button ng-click="deleteLessons()">delete lesson</button>
+	<button ng-click="deleteService()">delete lesson</button>
 	<button ng-click="newLessons()">new content for lessons</button>
-	<div ng-repeat="limage in limages">
+	<div ng-repeat="image in limages">
 		<img src="{{limage.picturelink}}">
 	</div>
 
 	<form>
-		content <textarea ng-model='CC.lessons'></textarea>
+		content <textarea ng-model='SC.lessons'></textarea>
 		<button ng-click="CC.newLesson()">add content</button>
 	</form>
 	<form>
-		pictures <input type="url" ng-model="CC.limage">
+		pictures <input type="url" ng-model="SC.limage">
 		<button ng-click="CC.newLimage()">add picture</button>
 	</form>
 

@@ -1,9 +1,10 @@
 <div ng-controller = "serviceController as SC">
+	{{SC.services}}
 
 	I have extensive experience playing at weddings, parties, and special events.  If you need music for any occasion please contact me through the <a href="/#/contact">contact</a> page or at mail@terrencerosnagle.com
 
-	<div ng-repeat="service in services" ng-if="service.page=='booking'">
-	    <img src="{{[service.picturelink]}}">
+	<div ng-repeat="service in services[0]" ng-if="service.page=='booking'">
+	    <img src="{{service.picturelink}}">
 
 	    <iframe width="520" height="315"
 		src="{{service.videolink}}">
@@ -15,14 +16,14 @@
 
 	<form>
 		page 
-		<select name="pagename" >
+		<select name="pagename" ng-model="SC.serviceinfo.page">
 			<option value = "booking"> booking </option>
 			<option value = "bio"> about Terrence </option>
-			<option value = "lessons"> booking </option>
+			<option value = "lessons"> lessons </option>
 		</select>
 		pictures <input type="text" ng-model="SC.serviceinfo.picturelink">
 		video <input type="text" ng-model="SC.serviceinfo.videolink">
-		<button ng-click="CC.newService(pagename)">add picture</button>
+		<button ng-click="SC.newService()">add picture</button>
 
 	</form>
 

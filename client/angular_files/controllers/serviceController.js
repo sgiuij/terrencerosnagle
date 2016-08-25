@@ -16,7 +16,9 @@
         if (factoryData.data.errors) {
            _this.errors = factoryData.data.errors
         } else {
-          _this.service = factoryData.data.service
+
+          _this.services = factoryData.data.ser
+           console.log(_this.services)
         }
       })
     }
@@ -24,7 +26,7 @@
 
     _this.newService = function () {
       _this.errors = []
-      serviceFactory.newService(_this.eventinfo, function (factoryData) {
+      serviceFactory.newService(_this.serviceinfo, function (factoryData) {
         if (factoryData.data.errors) {
           _this.errors = factoryData.data.errors
         } else {
