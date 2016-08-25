@@ -3,6 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Terrence Rosnagle</title>
+	<!-- LOAD BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<!-- LOAD NORMALIZE CSS -->
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<!-- LOAD CSS -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/javascript" src='/bower_components/angular/angular.js'></script>
 	<script type="text/javascript" src='/bower_components/angular-route/angular-route.js'></script>
 	<script type="text/javascript" src='/angular_files/app.js'></script>
@@ -16,16 +22,36 @@
 	<script type="text/javascript" src='/angular_files/controllers/userController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/serviceController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/sampleController.js'></script>
+	<!-- LOAD JQUERY -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(event) {
+    $('select').on('servicesprovided','option',function(e) {
+        alert(this.value);
+    });
+	});</script>
 </head>
 <body>
-<a href="/#/home">home</a>
-<a href="/#/biography">About Terrence</a>
-<a href="/#/events">Performances/Schedule</a>
-<a href="/#/booking">Services</a>
-<a href="/#/sample">Samples</a>
-<a href="/#/contact">Contact</a>
-<a href="/#/payment">Payment</a>
-<a href="/#/admin">Admin</a>
+
+	<div class="jumbotron">
+		<h1>dssd</h1>
+		<a href="/#/home">home</a>
+		<a href="/#/biography">About Terrence</a>
+		<a href="/#/events">Performances/Schedule</a>
+		<a href="/#/booking"> 
+			<select name="servicesprovided">Services
+				<a href="/#/booking"><option>Lessons</option></a>
+				<a href="/#/booking"><option>Transcriptions</option></a>
+				<a href="/#/booking"><option>Bookings</option></a>
+			</select> 
+		</a>
+		<a href="/#/sample">Samples</a>
+		<a href="/#/contact">Contact</a>
+		<a href="/#/payment">Payment</a>
+		<a href="/#/admin">Admin</a>
+		<div ng-view=''></div>	
+	</div>
  <div ng-view=''></div>
+
 </body>
 </html>
