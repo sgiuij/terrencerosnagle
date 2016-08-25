@@ -1,5 +1,44 @@
 <div ng-controller = "serviceController as SC">
-	
+	<h1>lessons</h1>
+	<div>
+<p>A dedicated and talented teacher, Terrence works hard to keep students of all ages and levels inspired and growing as guitarists and musicians.  He has students of all ages and abilities - from the young beginner just starting to the experienced player looking to learn new styles and techniques. Terrence teaches with a method that not only imparts on the student how to play the guitar but how to play it musically.</p>
+
+<p>Styles taught:
+  
+	<ul>
+		<li>Flamenco</li>
+		<li>Brazilian Samba and Bossa Nova</li>
+		<li>Classical</li>
+		<li>Blues</li>
+		<li>Rock</li>
+		<li>Latin Guitar</li>
+		<li>Fingerstyle</li>
+		<li>Electric and Acoustic</li>
+	</ul>
+   
+
+<p>Terrence teaches with care and patience. Lessons are individualized to what the student wants to learn.  The importance of practice routines and how to practice are taught - leading to musical advancement and understanding by the student.  Music theory and music notation (reading music) can also be taught.</p>
+
+<p>Lessons are always fun and relaxed.</p>
+
+<p>As a credentialed teacher, Terrence has years of experience kids both academically and musically.  With the guitar his methods have produced great results with young learners.  Terrence Has helped many young learner get into college and university music programs.</p>
+
+<p>Many EXCELLENT references are available on request.</p>
+<p>Lessons are also offered for Ukulele and Charango. </p>
+</div>
+
+<div>
+<b>rates:</b>
+
+<p>Please contact Terrence to inquire about rates and scheduling.</p>
+<p>One hour and 1/2 hour lessons are available.</p>
+
+<p>Lessons are taught in Terrence's studio, at Student's home, or on the internet via SKYPE.</p>
+
+</div>
+
+
+	<h1>bookings</h1>
 
 	I have extensive experience playing at weddings, parties, and special events.  If you need music for any occasion please contact me through the <a href="/#/contact">contact</a> page or at mail@terrencerosnagle.com
 
@@ -33,6 +72,24 @@
 		<button ng-click="SC.newService()">add picture</button>
 
 	</form>
+
+	<h1>transcription</h1>
+
+	<p>I offer professional transcription service for guitar.</p>
+
+<p>How does it work?  Ever hear a song you want to learn but don't have the patience or time to figure it out?  I'll do it for you.  I can do parts of songs (solos, intros, bridges, etc) or complete songs.   Perhaps you have the sheet music for a song or piece, but don't read standard notation - I can put it into guitar tab to your specifications.</p>
+
+<p>Prices-
+$30.00 per hour.  Most songs take about an hour.  Parts of songs require less time so prices are adjusted accordingly.</p>
+
+ <p>Simply contact me at mail@terrencerosnagle.com   Let me know the music you would like transcribed.  I will quote you a price and turn-around time.  Once the transcription is made I will tell you. Then, you pay and  I give you the transcription.</p>
+
+<form> 
+	<input type="text" ng-model="SC.serviceinfo.content">
+	
+	<button ng-click="SC.service.deleteService()">add</button>
+</form>
+
 
 
 
