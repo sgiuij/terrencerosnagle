@@ -1,10 +1,15 @@
-<div ng-controller = "ministoreController as MC">
+<div ng-controller = "userController as UC">
 
 	<table>
-	<tr ng-repeat="order in MC.orders">
-	    <td>{{order._customer.name}}</td>
-	    <td>{{order._products.name}}</td>
-	    <td>{{order.prodquantity}}</td>
+		<tr>
+			<th>name</th>
+			<th>email</th>
+			<th>code</th>
+		</tr>
+	<tr ng-repeat="user in UC.users">
+	    <td>{{user.name}}</td>
+	    <td>{{user.email}}</td>
+	    <td>{{user.code}}</td>
     </tr>
 	</table>
 
