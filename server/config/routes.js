@@ -3,6 +3,7 @@ var admin = require('../controllers/adminController.js')
 var user = require('../controllers/userController.js')
 var service = require('../controllers/serviceController.js')
 var sample = require('../controllers/sampleController.js')
+var paypal = require('../controllers/paypalController.js')
 
 module.exports = function (app) {
   app.get('/events',event.allEvents)
@@ -17,6 +18,10 @@ module.exports = function (app) {
   app.get('/admin',admin.allAdmins)
   app.post('/admin/new',admin.newAdmin)
   app.post('/admin/delete/:id',admin.deleteAdmin)
+
+  app.get('/rates',paypal.allRates)
+  app.post('/rate/new', paypal.newRate)
+  app.post('/rate/delete', paypal.deleteRate)
 
   app.get('/service',service.getService)
   app.post('/service/new',service.newService)

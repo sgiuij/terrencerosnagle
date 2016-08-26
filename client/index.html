@@ -18,11 +18,13 @@
 	<script type="text/javascript" src='/angular_files/services/userFactory.js'></script>
 	<script type="text/javascript" src='/angular_files/services/serviceFactory.js'></script>
 	<script type="text/javascript" src='/angular_files/services/sampleFactory.js'></script>
+    <script type="text/javascript" src='/angular_files/services/paypalFactory.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/adminController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/eventController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/userController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/serviceController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/sampleController.js'></script>
+    <script type="text/javascript" src='/angular_files/controllers/paypalController.js'></script>
 	<!-- LOAD JQUERY -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -62,10 +64,15 @@
                         <a class="page-scroll" href="/#/contact">Contact</a>
                     </li>
                     <li>
+                        
+                        <a class="page-scroll" href="/#/tutorials">Tutorials</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="/#/payment">Payment</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/#/admin">Admin</a>
+                      
                     </li>
                 </ul>
             </div>
@@ -73,6 +80,7 @@
         </div>
         <!-- /.container -->
     </nav>
+
 
     <!-- Intro Header -->
     <header class="intro">
@@ -86,7 +94,12 @@
 
  
 	<div ng-view=''></div>	
+
+
+</body>
+
+
 </body>
 </html>
 
-
+   
