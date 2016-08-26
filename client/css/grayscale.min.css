@@ -21,28 +21,68 @@
 /*******************************
 BIOGRAPHY
 *******************************/
-
-
-
-/*******************************
-HOME
-*******************************/
-
-
-.partial_header_events{
+.partial_header_bio{
 	display: inline-block;
 	color:black;
-	margin-left:20em;
+	margin-left:15em;
 	margin-bottom: 5em;
 	margin-top:-3em;
 	padding:0;
 }
 
 
+/*******************************
+EVENTS
+*******************************/
+.events_creator{
+	display: inline-block;
+	height:300px;
+	margin-top:7em;
+	vertical-align: top;
+	padding:0;
+	width:300px;
+}
+	.events_creator form input, button{
+		display:block;
+		text-align:center;
+		color:black;
+		margin: 0 auto;
+		margin-bottom:1em;
+		border-radius:6px;
+		border:1px solid black;
+		width:30em;
+	}
+
+	.events_creator form textarea{
+		display:inline-block;
+		vertical-align:center;
+		text-align:center;
+		color:black;
+		border-radius:7px;
+		border:1px solid black;
+		margin-left:1em;
+		margin-bottom:2.5em;
+		width:400px;
+		height:200px;
+	}
+
+.partial_header_events{
+	vertical-align: top;
+	display: inline-block;
+	color:black;
+	margin-left:20em;
+	margin-bottom: 5em;
+	margin-top:-1em;
+	padding:0;
+}
+
+
 .events_calender{
+	display:inline-block;
+	vertical-align: top;
 	width:450px;
-	display:block;
-	margin-left:10em
+	margin-left:10em;
+	margin-top:-22em;
 }
 	.event_style_header{
 		border-top: 2px solid black;
