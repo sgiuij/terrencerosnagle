@@ -12,7 +12,41 @@
   overflow-y: scroll;
 }
 
+/*******************************
+HOME
+*******************************/
+.home{
+	display:inline-block;
+	vertical-align: top;
+	width:520px;
+	margin-left:3em;
+}
+	.partial_header_home{
+		display: inline-block;
+		color:black;
+		margin-left:16em;
+		margin-bottom: 5em;
+		margin-top:-3em;
+		padding:0;
+	}
 
+	.home p{
+		color:black;
+		font-size:16px;
+	}
+
+	.images_box{
+		display:inline-block;
+		vertical-align:top;
+		margin-left:2em;
+	}
+		.images_box img{
+			width: 650px;
+			height: 350px;
+			border-radius:7px;
+			display:block;
+			margin-bottom: 1em;
+		}
 
 
 
