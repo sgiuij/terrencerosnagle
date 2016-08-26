@@ -6,6 +6,23 @@
 		<a href="/#/booking"><li>Transcription Service</li> </a>
 	</ul>
 <div>
+	<div ng-repeat="service in SC.services" ng-if="service.page=='bio'">
+		
+		<div ng-repeat="picture in service.picturelink track by $index">
+			
+			<img src="{{picture}}">
+			<button ng-click="SC.deleteService(picture,service._id)">delete</button>
+		</div>
+		<div ng-repeat="video in service.videolink track by $index">
+		    <iframe width="560" height="315" frameborder="0" allowfullscreen
+			src="{{video}}">
+			</iframe>
+			<button ng-click="SC.deleteService(video,service._id)">delete</button>
+		</div>
+
+	
+	</div>
+
 	<h1>About Terrence</h1>
 	<p>Born in Pasadena, California and raised in the Los Angeles area.</p>
 <p>Terrence was initially self taught and inspired by Delta Blues and Rock and Roll guitarist such as Robert Johnson, Son House, and Jimi Hendrix.  Later, his interests switched to the sound of the Spanish guitar and World Music.  He went on to study Flamenco guitar with private teachers in Spain such as Jose Ignacio Franco and El Carbonero in Jerez de la Frontera and through the Conservatory de Licieu in Barcelona, Spain.  He has studied Classical and South American guitar with the Chilean maestro Eulogio Davalos in Barcelona and Brazilian guitar styles with Steve Erquiaga at the Jazz School in Berkeley, California.  Terrence has lived in Buenos Aires, Argentina studying Folkloric guitar styles and in Istanbul, Turkey where he studied ud and Turkish Classical Music.</p>
