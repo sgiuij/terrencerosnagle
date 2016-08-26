@@ -1,5 +1,5 @@
 <div ng-controller = 'eventController as EC'>
-	<h1>Events</h1>
+	<h1 class="partial_header_events">Events</h1>
 	<div class="events_calender">
 		<div ng-repeat="event in EC.events" | orderBy: 'content' | limitTo:6>
 			<div class="events_box">

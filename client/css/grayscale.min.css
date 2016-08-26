@@ -7,6 +7,10 @@
  
 
 
+ body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
 
 
@@ -14,13 +18,21 @@
 
 
 
+/*******************************
+BIOGRAPHY
+*******************************/
 
 
 
-h1{
+/*******************************
+HOME
+*******************************/
+
+
+.partial_header_events{
 	display: inline-block;
 	color:black;
-	margin-left:23em;
+	margin-left:20em;
 	margin-bottom: 5em;
 	margin-top:-3em;
 	padding:0;
@@ -30,7 +42,7 @@ h1{
 .events_calender{
 	width:450px;
 	display:block;
-	margin-left:13em
+	margin-left:10em
 }
 	.event_style_header{
 		border-top: 2px solid black;
