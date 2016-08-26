@@ -6,7 +6,7 @@
 		duation <input type='text' ng-model = "PC.ratesinfo.duration">
 		location <input type='text' ng-model = "PC.ratesinfo.location">
 		note <input type='text' ng-model = "PC.ratesinfo.note">
-		price <textarea ng-model = "PC.ratesinfo.price"></textarea>
+		price <input type = "text" ng-model = "PC.ratesinfo.price">
 		<button ng-click="PC.newRate()">update rate</button>
 
 	</form>
@@ -22,6 +22,7 @@
 		</tr>
 		
 		<tr ng-repeat="rate in PC.rates">
+			
 			
 		    <td>{{rate.date}}</td>
 		    <td>{{rate.time}}</td>

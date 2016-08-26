@@ -38,7 +38,7 @@ var SampleSchema = new mongoose.Schema({
 })
 
 var RateSchema = new mongoose.Schema({
-  service:{type:Date, required:true},
+  service:{type:String, required:true},
   duration:{type:String, required:true},
   location:{type:String},
   note:{type:String},

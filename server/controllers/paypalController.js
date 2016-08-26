@@ -5,11 +5,15 @@ var Rate = mongoose.model('Rate')
 module.exports = {
 
   newRate: function (req, res) {
-    var event = new Rate(req.body)
-    event.save(function (err,rates) {
+    var rate = new Rate(req.body)
+    console.log('newRate server')
+    console.log(req.body)
+    rate.save(function (err,rates) {
       if (err){
+        console.log(err)
           res.json({errors: err })
       }else{
+        console.log('rates added to server')
         res.json({rates})
       }
     })

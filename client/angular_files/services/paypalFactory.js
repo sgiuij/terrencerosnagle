@@ -3,20 +3,23 @@
 
   angular
     .module('myApp')
-    .factory('rateFactory', factory)
+    .factory('paypalFactory', factory)
 
   function factory ($http) {
     var factory = {}
 
-    factory.newRate = function (eventinfo, callback) {
-      $http.post('/rate/new', eventinfo)
+    factory.newRate = function (rateinfo, callback) {
+      console.log('newRate factory')
+      console.log(rateinfo)
+      $http.post('/rate/new', rateinfo)
         .then(function (returnData) {
+          console.log('newRate factory2')
           callback(returnData)
         })
     }
 
     factory.allRates = function (callback) {
-      console.log('in allEvents factory')
+      console.log('in allRates factory')
       $http.get('/rates')
         .then(function (returnData) {
             callback(returnData)

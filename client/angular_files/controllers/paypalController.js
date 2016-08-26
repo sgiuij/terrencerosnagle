@@ -4,19 +4,20 @@
   angular
     .module('myApp')
     .controller('paypalController', paypalController)
-    //Q1:modularized controller, why is allEvent still running everywhere
-    //why do we use _this instead of this
+
   function paypalController (paypalFactory, $scope, $location) {
     var _this = this
     _this.errors = []
 
     _this.allRates = function () {
+      console.log('paypalController allRates')
       _this.errors = []
       paypalFactory.allRates(function (factoryData) {
-        console.log('in allEvents front end controller')
+        
         if (factoryData.data.errors) {
            _this.errors = factoryData.data.errors
         } else {
+          console.log('in allRates front end controller')
           _this.rates = factoryData.data.rates
         }
       })
@@ -24,12 +25,15 @@
     _this.allRates()
 
     _this.newRate = function () {
+      console.log('newrate')
       _this.errors = []
-      paypalFactory.newRate(_this.rateinfo, function (factoryData) {
+      paypalFactory.newRate(_this.ratesinfo, function (factoryData) {
         if (factoryData.data.errors) {
+          console.log('newRate controller error')
           _this.errors = factoryData.data.errors
         } else {
-          _this.allRate()
+          
+          _this.allRates()
         }
       })
     }
