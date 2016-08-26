@@ -1,25 +1,6 @@
-<div style="width:1000px" ng-controller = "serviceController as SC">
+
+ <div style="width:1000px" ng-controller = "eventController as EC">
 	<h1 class="partial_header_events">Events</h1>
-
-	<div ng-repeat="service in SC.services" ng-if="service.page=='event'">
-		
-		<div ng-repeat="picture in service.picturelink track by $index">
-			
-			<img src="{{picture}}">
-			<button ng-click="SC.deleteService(picture,service._id)">delete</button>
-		</div>
-		<div ng-repeat="video in service.videolink track by $index">
-			
-		    <iframe width="560" height="315" frameborder="0" allowfullscreen
-			src="{{video}}">
-			</iframe>
-			
-			<button ng-click="SC.deleteService(video,service._id)">delete</button>
-		</div>
-	</div>
-</div>
-
-<div style="width:1000px" ng-controller = "eventController as EC">
 	<div class="events_creator">
 		<form>
 			<input placeholder="Date" type='text' ng-model = "EC.eventinfo.date">
@@ -29,7 +10,17 @@
 			<button style="background-color:white" ng-click="EC.newEvent()">Create Event</button>
 		</form>
 	</div>
-	
+	<div class="events_calender">
+		<div ng-repeat="event in EC.events" | orderBy: 'content' | limitTo:6>
+			<div class="events_box">
+				<h3 class="event_style_header">{{event.location}}</h3>
+				<h6 class="event_style">{{event.date}}</h6>
+			    <p class="event_style">{{event.time}}</p>
+			    <p class="event_style">{{event.content}}</p>
+			</div>
+	    </div>
+	</div>
 </div>
 
 
+</div>

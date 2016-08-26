@@ -38,10 +38,10 @@ HOME
 	.images_box{
 		display:inline-block;
 		vertical-align:top;
-		margin-left:2em;
+		margin-left:1em;
 	}
 		.images_box img{
-			width: 650px;
+			width: 600px;
 			height: 350px;
 			border-radius:7px;
 			display:block;
@@ -52,17 +52,77 @@ HOME
 
 
 
+
+
+/*******************************
+BOOKING
+*******************************/
+.booking{
+	color:black;
+	text-align:center;
+	width:1000px;
+	display:block;
+	margin: 0 auto;
+}
+	.booking .partial_header_bio{
+		display: inline-block;
+		color:black;
+		margin-left:15em;
+		margin-bottom: 5em;
+		margin-top:-3em;
+		padding:0;
+	}
+
+	.booking ul{
+		list-style-type: none;
+	}
+
+	.booking .contents_creator{
+		display: inline-block;
+		height:300px;
+		margin-top:7em;
+		vertical-align: top;
+		padding:0;
+		width:300px;
+		margin-left:-7em;
+	}
+	.booking .contents_creator input, button{
+		display:block;
+		text-align:center;
+		color:black;
+		margin: 0 auto;
+		margin-bottom:1em;
+		border-radius:6px;
+		border:1px solid black;
+		width:30em;
+	}
+
+	.booking .contents_creator select{
+		display:inline-block;
+		margin-left:8em;
+		margin-bottom: 1em;
+	}
+
+
 /*******************************
 BIOGRAPHY
 *******************************/
 .partial_header_bio{
 	display: inline-block;
 	color:black;
-	margin-left:15em;
+	margin-left:1em;
 	margin-bottom: 5em;
 	margin-top:-3em;
 	padding:0;
 }
+.bio{
+	text-align:center;
+	color:black;
+}
+
+	.bio ul{
+		list-style-type: none;
+	}
 
 
 /*******************************
