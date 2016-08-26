@@ -20,7 +20,7 @@ module.exports = function (app) {
 
   app.get('/service',service.getService)
   app.post('/service/new',service.newService)
-  app.post('/service/:id',service.deleteService)
+  app.post('/service/delete',service.deleteService)
 
   app.get('/sample',sample.allSample)
   app.post('/sample/new',sample.newSample)

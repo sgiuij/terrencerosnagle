@@ -5,6 +5,7 @@
                 <h2 class="panel-title">Contact Form</h2>
             </div>
             <div ng-controller="contactController" class="panel-body">
+            
                 <form ng-submit="submit(contactform)" name="contactform" method="post" class="form-horizontal" role="form">
                     <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
                         <label for="inputName" class="col-lg-2 control-label">Name</label>
@@ -42,3 +43,5 @@
         </div>
     </div>
 </div>
+
+

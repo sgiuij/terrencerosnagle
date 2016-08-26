@@ -36,6 +36,7 @@
     }
 
     _this.deleteService = function(link,id){
+      console.log('kkkkkkkkkkkkkk')
       _this.errors = []
       var sinfo={link:link,id:id}
       serviceFactory.deleteService(sinfo, function (factoryData) {

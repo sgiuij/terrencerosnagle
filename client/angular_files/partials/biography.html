@@ -1,9 +1,9 @@
 <div ng-controller = "serviceController as SC">
 	<h1>Specialties and Services</h1>
 	<ul>
-		<a href="/#/lessons"><li>Guitar Lessons</li> </a>
+		<a href="/#/booking"><li>Guitar Lessons</li> </a>
 		<a href="/#/booking"><li>Performance Invitations</li> </a>
-		<a href=""><li>Transcription Service</li> </a>
+		<a href="/#/booking"><li>Transcription Service</li> </a>
 	</ul>
 <div>
 	<h1>About Terrence</h1>
@@ -13,55 +13,7 @@
 <p>Terrence holds a BA in Anthropology from the Humboldt State University and a California Teaching Credential from Califronia State University East Bay.</p>
 </div>
 
-<div ng-app="plunker">
-        <div  ng-controller="MainCtrl">
-            <p><date-input name="info.name" message="info.message"></date-input></p>
-            <ul>
-                <li data-ng-repeat="business in businesses">
-                    {{business.name}}
-                </li>
-            </ul>
-        </div>
-        <script>
-            function randomString(length, chars) {
-                var result = '';
-                for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-                return result;
-            }
 
-            var app = angular.module('plunker', []);
-            app.controller('MainCtrl', ['$scope', 'MyYelpAPI', function($scope, MyYelpAPI) {
-                $scope.businesses = [];
-                MyYelpAPI.retrieveYelp('', function(data) {
-                    $scope.businesses = data.businesses;
-
-                });
-
-            }]).factory("MyYelpAPI", function($http) {
-                return {
-                    "retrieveYelp": function(name, callback) {
-                        var method = 'GET';
-                        var url = 'http://api.yelp.com/v2/search';
-                        var params = {
-                            callback: 'angular.callbacks._0',
-                            location: 'San+Francisc',
-                            oauth_consumer_key: '', //Consumer Key
-                            oauth_token: '', //Token
-                            oauth_signature_method: "HMAC-SHA1",
-                            oauth_timestamp: new Date().getTime(),
-                            oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                            term: 'food'
-                        };
-                        var consumerSecret = ''; //Consumer Secret
-                        var tokenSecret = ''; //Token Secret
-                        var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
-                        params['oauth_signature'] = signature;
-                        $http.jsonp(url, {params: params}).success(callback);
-                    }
-                }
-            });
-        </script>
-    </div>
 
 
 
