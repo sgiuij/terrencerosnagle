@@ -37,6 +37,14 @@ var SampleSchema = new mongoose.Schema({
   audiolink:{type:String,required:true}
 })
 
+var RateSchema = new mongoose.Schema({
+  service:{type:Date, required:true},
+  duration:{type:String, required:true},
+  location:{type:String},
+  note:{type:String},
+  price:{type:String, required:true}
+}, {timestamps: true})
+
 
 AdminSchema.pre('save', function (next) {
   bcrypt.genSalt(10, function (err, salt) {
@@ -50,6 +58,7 @@ AdminSchema.pre('save', function (next) {
 })
 
 mongoose.model('Admin', AdminSchema)
+mongoose.model('Rate', RateSchema)
 mongoose.model('Event',EventSchema)
 mongoose.model('User',UserSchema)
 mongoose.model('Service',ServiceSchema)

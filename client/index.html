@@ -18,11 +18,13 @@
 	<script type="text/javascript" src='/angular_files/services/userFactory.js'></script>
 	<script type="text/javascript" src='/angular_files/services/serviceFactory.js'></script>
 	<script type="text/javascript" src='/angular_files/services/sampleFactory.js'></script>
+    <script type="text/javascript" src='/angular_files/services/paypalFactory.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/adminController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/eventController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/userController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/serviceController.js'></script>
 	<script type="text/javascript" src='/angular_files/controllers/sampleController.js'></script>
+    <script type="text/javascript" src='/angular_files/controllers/paypalController.js'></script>
 	<!-- LOAD JQUERY -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -62,10 +64,15 @@
                         <a class="page-scroll" href="/#/contact">Contact</a>
                     </li>
                     <li>
+                        
+                        <a class="page-scroll" href="/#/tutorials">Tutorials</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="/#/payment">Payment</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/#/admin">Admin</a>
+                      
                     </li>
                 </ul>
             </div>
@@ -73,6 +80,26 @@
         </div>
         <!-- /.container -->
     </nav>
+
+    <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <!-- Intro Header -->
     <header class="intro">
@@ -86,13 +113,15 @@
 
  
 	<div ng-view=''></div>	
-</body>
-</html>
-
-    <h1>About Terrence</h1>
+     <h1>About Terrence</h1>
         <p>Born in Pasadena, California and raised in the Los Angeles area.</p>
     <p>Terrence was initially self taught and inspired by Delta Blues and Rock and Roll guitarist such as Robert Johnson, Son House, and Jimi Hendrix.  Later, his interests switched to the sound of the Spanish guitar and World Music.  He went on to study Flamenco guitar with private teachers in Spain such as Jose Ignacio Franco and El Carbonero in Jerez de la Frontera and through the Conservatory de Licieu in Barcelona, Spain.  He has studied Classical and South American guitar with the Chilean maestro Eulogio Davalos in Barcelona and Brazilian guitar styles with Steve Erquiaga at the Jazz School in Berkeley, California.  Terrence has lived in Buenos Aires, Argentina studying Folkloric guitar styles and in Istanbul, Turkey where he studied ud and Turkish Classical Music.</p>
 
     <p>Terrence holds a BA in Anthropology from the Humboldt State University and a California Teaching Credential from Califronia State University East Bay.</p>
 
 
+
+</body>
+</html>
+
+   
