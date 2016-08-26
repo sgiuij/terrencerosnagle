@@ -24,34 +24,21 @@
 	<script type="text/javascript" src='/angular_files/controllers/sampleController.js'></script>
 	<!-- LOAD JQUERY -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(event) {
-    $('select').on('servicesprovided','option',function(e) {
-        alert(this.value);
-    });
-	});</script>
 </head>
 <body>
-
 	<div class="jumbotron">
 		<h1>dssd</h1>
 		<a href="/#/home">home</a>
 		<a href="/#/biography">About Terrence</a>
 		<a href="/#/events">Performances/Schedule</a>
-		<a href="/#/booking"> 
-			<select name="servicesprovided">Services
-				<a href="/#/booking"><option>Lessons</option></a>
-				<a href="/#/booking"><option>Transcriptions</option></a>
-				<a href="/#/booking"><option>Bookings</option></a>
-			</select> 
-		</a>
+		<a href="/#/lessons">Guitar Lessons</a>
+		<a href="/#/services">Services</a>
 		<a href="/#/sample">Samples</a>
 		<a href="/#/contact">Contact</a>
 		<a href="/#/payment">Payment</a>
 		<a href="/#/admin">Admin</a>
 		<div ng-view=''></div>	
 	</div>
- <div ng-view=''></div>
 
 </body>
 </html>

@@ -2,7 +2,6 @@ var mongoose = require('mongoose')
 var Service = mongoose.model('Service')
 
 
-
 module.exports = {
 
 
@@ -60,22 +59,45 @@ module.exports = {
   },
   
   deleteService: function(req,res){
-    console.log('deleteService backend controller')
+    console.log('deleteService')
     console.log(req.body)
+    console.log(req.body)
+    console.log(req.body)
+    Service.find({_id:req.body.id,picturelink:{$in:[req.body.link]}},function(err,ser){
 
-    Service.remove({_id:req.params.id,picturelink:{$in:[req.body.link]}},function(err,ser){
       if (err){
-        Service.remove({_id:req.params.id,videolink:{$in:[req.body.link]}},function(err,ser2){
-          if(err){
-            res.json({erros:err})
+        res.json({err})
+        console.log('first layer error')
+      }else if (ser==null){
+        Service.find({_id:req.body.id, videolink:{$in:[req.body.link]}},function(err,ser2){
+          if (err){
+            console.log('second layer error')
+            res.json({err})
           }else{
-            res.json({ser2})
+            console.log('second layer')
+              Service.update({_id:req.body.id}, {$pull:{videolink:{$in:[req.body.link]}}},function(err,ser2){
+                if(err){
+                  console.log('third layer error')
+                  res.json({err})
+                }else{   
+                  console.log('third layer success')      
+                  res.json({ser2})      
+                }
+              })
+            }
+          })
+      }else{
+        console.log('second layer success')
+        Service.update({_id:req.body.id},{$pull:{picturelink:{$in:[req.body.link]}}},function(err,ser3){
+          if(err){
+            console.log('third layer err')
+            res.json({err})
+          }else{
+            console.log('success third layer')
+            res.json({ser3})
           }
         })
-
-      }else{
-        res.json({ser})
-      }
+      } 
     })
   }
 

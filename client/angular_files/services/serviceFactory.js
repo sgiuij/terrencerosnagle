@@ -15,13 +15,23 @@
         })
     }
 
+    // factory.deleteService = function (sinfo, callback) {
+    //   console.log('*****deleteService factory*****')
+    //   console.log(sinfo.id)
+  
+    //   $http.post('/service/'+sinfo.id,sinfo.link)
+    //     .then(function (returnData) {
+    //       console.log('*****deleteService factory*****')
+    //         callback(returnData)
+    //     })
+    // }
+
     factory.deleteService = function (sinfo, callback) {
       console.log('*****deleteService factory*****')
-      console.log(sinfo)
   
-      $http.post('/service/'+sinfo.id,sinfo.link)
+      $http.post('/service/delete', sinfo)
         .then(function (returnData) {
-          console.log('*****deleteService factory*****')
+          console.log('*****indide deleteService factory*****')
             callback(returnData)
         })
     }
