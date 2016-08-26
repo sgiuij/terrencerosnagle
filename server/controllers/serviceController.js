@@ -33,7 +33,7 @@ module.exports = {
           if(req.body.picturelink && req.body.picturelink.length) {
             updateQuery.$push.picturelink = req.body.picturelink;
           }
-          if(req.body.vdeiolink && req.body.videolink.length) {
+          if(req.body.videolink && req.body.videolink.length) {
             updateQuery.$push.videolink = req.body.videolink;
           }
           Service.update({page:req.body.page},updateQuery,function(err,thisser){
@@ -59,17 +59,15 @@ module.exports = {
   },
   
   deleteService: function(req,res){
-    console.log('deleteService')
     console.log(req.body)
-    console.log(req.body)
-    console.log(req.body)
-    Service.find({_id:req.body.id,picturelink:{$in:[req.body.link]}},function(err,ser){
+
+    Service.findOne({_id:req.body.id,picturelink:{$in:[req.body.link]}},function(err,ser){
 
       if (err){
         res.json({err})
         console.log('first layer error')
       }else if (ser==null){
-        Service.find({_id:req.body.id, videolink:{$in:[req.body.link]}},function(err,ser2){
+        Service.findOne({_id:req.body.id, videolink:{$in:[req.body.link]}},function(err,ser2){
           if (err){
             console.log('second layer error')
             res.json({err})
