@@ -7,18 +7,19 @@
 background-image: url("images/imgres.jpg");
 background-size: cover;}*/
 
-
+.jumbotron a{
+	color:black;
+}
 
 .events_calender .date{
-	font-size:10em;
+	font-size:0.8em;
 	display:inline-block;
 	margin-right:0.5em;
-	color:black;
 
 }
 
 .events_calender .location{
-	font-size:20em;
+	font-size:0.8em;
 	display:inline-block;
 	margin-right:0.5em;
 }

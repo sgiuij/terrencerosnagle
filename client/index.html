@@ -6,10 +6,12 @@
 	<!-- LOAD BOOTSTRAP CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<!-- LOAD NORMALIZE CSS -->
-	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<!-- LOAD CSS -->
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script type="text/javascript" src='/bower_components/angular/angular.js'></script>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<!-- Theme CSS -->
+    <link href="css/grayscale.min.css" rel="stylesheet"> 
+    <!-- LOAD CSS -->
+<!-- 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+ -->	<script type="text/javascript" src='/bower_components/angular/angular.js'></script>
 	<script type="text/javascript" src='/bower_components/angular-route/angular-route.js'></script>
 	<script type="text/javascript" src='/angular_files/app.js'></script>
 	<script type="text/javascript" src='/angular_files/services/adminFactory.js'></script>
@@ -25,20 +27,68 @@
 	<!-- LOAD JQUERY -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
-<body>
-	<div class="jumbotron">
-		<h1>dssd</h1>
-		<a href="/#/home">home</a>
-		<a href="/#/biography">About Terrence</a>
-		<a href="/#/events">Performances/Schedule</a>
-		<a href="/#/lessons">Guitar Lessons</a>
-		<a href="/#/booking">Bookings</a>
-		<a href="/#/sample">Samples</a>
-		<a href="/#/contact">Contact</a>
-		<a href="/#/payment">Payment</a>
-		<a href="/#/admin">Admin</a>
-		<div ng-view=''></div>	
-	</div>
 
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/home">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/biography">Biography</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/events">Events</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/#/lessons">Lessons</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/booking">Bookings</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/sample">Sample</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/#/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/payment">Payment</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/admin">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </header>
+
+ 
+	<div ng-view=''></div>	
 </body>
 </html>
+
+

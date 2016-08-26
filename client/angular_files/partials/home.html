@@ -1,22 +1,14 @@
 <div ng-controller = 'eventController as EC'>
-	Thursday tasks:
-	 1.putting our codes together, 
-	 2.Yelp API/Paypal API
-	 3.delete images/videos
-	 4.insert login/reg
-	 5.make it pretty
-	 6.copy paste into another site without buttons
-	 7,make add content functionality to database
-
-	 //1.why do I keep getting allevents even when modularized
-	 //2.why _this instead of this
-	<table>
-		<tr ng-repeat="event in EC.events" |orderBy: 'date' | limitTo:6>
-
-		    <td>{{event.date}}</td>
-		    <td>{{event.time}}</td>
-		    <td>{{event.location}}</td>
-		    <td>{{event.content}}</td>
-	    </tr>
-	</table>
+	<h1>Events</h1>
+	<div class="events_calender">
+		<div ng-repeat="event in EC.events" | orderBy: 'content' | limitTo:6>
+			<div class="events_box">
+				<h3 class="event_style_header">{{event.location}}</h3>
+				<h6 class="event_style">{{event.date}}</h6>
+			    <p class="event_style">{{event.time}}</p>
+			    <p class="event_style">{{event.content}}</p>
+			</div>
+	    </div>
+	</div>
 </div>
+
